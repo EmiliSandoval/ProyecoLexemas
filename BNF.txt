@@ -1,0 +1,25 @@
+Diagrama 1
+
+<Programa>::=<Bloque>.
+<Bloque1>::== id = num | id = num , <Bloque>
+<Bloque1>::= const <Bloque1>|E ;
+<Bloque2>::== id|id , <Bloque2>
+<Bloque2>::= var <Bloque2> ;|E
+<Bloques3>:: = proced id ; Bloque|E ; 
+<Bloque>::= <Bloques1> <Bloques2> <Bloques3>
+<Condición> ::=<Expre> == | != | < | > | <= | >= <Expre>
+<Condición>::= == | != | < | > | <= | >=<Condición> ::=<Expre> <Condición> <Expre>
+
+
+Diagrama 2
+
+<Pros1>::= <begin> <pro> end 
+<Pros2>::= id = <expre>
+<Pros3>::= write <pro> 
+<Pros4>::= read id 
+<Pros5>::= call id 
+<Pros6>::= if <condicion> then <proposicion>
+<Pros7>::= while <condicion> do <proposicion>
+<Pros2>::= to|dto
+<Proposición>::= <Pros1> | <Pros2>  | <Pros3> | <Pros4> | <Pros5> | <Pros6> | <Pros7> | <Pros8> 
+<expre>::= termino | termino +|-<termino>::= factor | factor *|/<factor>::= ( <expre> ) | id | num
