@@ -1,0 +1,82 @@
+
+<Pograma>::=<Bloque>.
+
+<Blo1>::== id = num 
+<Blo1>::==  id = num , <Bloque1> 
+
+<Bloques1>::= const <Bloque1>;
+
+<Bloque2>::== id  
+<Bloque2>::== id , <Bloque2>
+
+<Bloques2>::= var <Bloque2> ;
+
+<Bloques3>:: = proced id ; bloque; 
+
+<Bloque>::= <Bloques1> <Bloques2> <Bloques3> <Proposición>
+
+<Condicion1>::= ==
+<Condicion1>::= !=
+<Condicion1>::= <
+<Condicion1>::= <
+<Condicion1>::= <=
+<Condicion1>::= >=
+<Condicion1> ::=<Expre> <Condicion1> <Expre>
+
+
+<pro1>::= <prop>
+<pro1>::= <prop>;
+
+<Pros1>::= <begin> <pro> end 
+
+
+<Pros2>::= id = <expre>
+
+
+
+<pro2>::= id
+<pro2>::=  num
+
+
+<Pros3>::= write <pro> 
+
+<Pros4>::= read id 
+
+<Pros5>::= call id 
+
+<Pros6>::= if <condicion> then <proposicion>
+
+<Pros7>::= while <condicion> do <proposicion>
+
+
+
+<Pro2>::= to 
+<Pro2>::=  dto
+
+
+<Pros8>::= for id = <expre> <Pro2> <expre>  do <proposicion> 
+
+<expre>::= termino 
+<expre>::=  termino <ex>  <expre>
+
+
+<Termino>::= factor 
+<Termino>::=  factor <te>  <Termino>
+
+<factor>::= ( <expre> ) 
+<factor>::= id 
+<factor>::=  num 
+
+
+<Proposicion>::= <Pros1> 
+<Proposicion>::= <Pros2> 
+<Proposicion>::= <Pros3>
+<Proposicion>::= <Pros4>
+<Proposicion>::= <Pros5>
+<Proposicion>::= <Pros6>
+<Proposicion>::= <Pros7>
+<Proposicion>::= <Pros8>
+
+
+
+
