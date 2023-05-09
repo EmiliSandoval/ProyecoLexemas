@@ -1,0 +1,53 @@
+
+<Pograma>::=<Bloque>.
+
+
+<bv>::= <Bloques1><Bloques2><Bloques3> 
+<Bloque>::= <bv> <Proposición>
+
+
+
+<Condicion> ::= <cos>
+<cos>::= <Expre> <Con1> <Expre>
+
+
+<Pros1>::= <begin> <p>
+<p>::= <pro1> end
+
+<Pros2>::= id = <expre>
+
+<Pros3>::= <p2>
+<p2>::=  write <pro>
+
+<Pros4>::= <p3> 
+<p3>::=read id
+
+<Pros5>::= <p4> 
+ <p4>::= call id 
+
+<Pros6>::= <P5> <proposicion>
+<P5>::= if <condicion> then 
+
+
+<Pros7>::=<P6> <proposicion>
+<P6>::=  while <condicion> do 
+
+<Pros8>::= for id =  <p7>  <proposicion>
+<p7>::= <expre> <Pro2> <expre> do
+
+
+<expre>::= termino <e>
+
+<e>::= <ex>  <expre>
+<e>::= E (null)
+ 
+<Termino>::=  factor <t>
+<t>:: = <te>  <Termino>
+<t>::= E (null)
+
+<factor>::= ( <expre> ) |id | num 
+ 
+
+<prosi1>::= <Pros1><Pros2><Pros3><Pros4><Pros5><Pros6><Pros7><Pros8>
+
+<Proposicion>::= <prosi1> 
