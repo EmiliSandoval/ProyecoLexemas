@@ -1,0 +1,54 @@
+Primer diagrama
+<Pograma>::=<Bloque>.
+
+<Blo1>::== id = num | id = num , <Blo1>
+<Bloques1>::= const <Blo1>| E (null);
+
+<Blo2>::== id  | id , <Blo2>
+<Bloques2>::= var <Blo2> ;|E(null)
+
+<Bloques3>:: = proced id ; bloque <Bloques3>|E (null)
+
+<Bloque>::= <Bloques1> <Bloques2> <Bloques3> <Proposición>
+
+
+<Condicion> ::=<Expre> == | != | < | > | <= | >= <Expre>
+
+<Con1>::= == | != | < | > | <= | >= 
+<Condicion> ::=<Expre> <Con1> <Expre>
+
+
+<pro>::= <prop> |<prop>;
+
+<Pros1>::= begin <pro> end 
+
+
+<Pros2>::= id = <expre>
+
+
+<pro3>::= id | num
+
+<Pros3>::= write <pro3> 
+
+<Pros4>::= read id 
+
+<Pros5>::= call id 
+
+<Pros6>::= if <condicion> then <proposicion>
+
+<Pros7>::= while <condicion> do <proposicion>
+
+<Pro2>::= to | dto
+
+<Pros8>::= for id = <expre> <Pro2> <expre>  do <proposicion> 
+
+<expre>::= termino | termino <ex> <expre>
+<ex>::= +|-
+<Termino>::= factor | factor <Tr> <Termino>
+<Tr>::= *|/ 
+<factor>::= ( <expre> ) | id | num
+ 
+<Proposicion>::= <Pros1> | <Pros2>  | <Pros3> | <Pros4> | <Pros5> | <Pros6> | <Pros7> | <Pros8> 
+
+
+

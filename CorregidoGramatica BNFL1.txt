@@ -1,0 +1,118 @@
+
+<Pograma>::=<Bloque>.
+
+
+<Blo1>::== id = num
+<Blo1>::==  id = num , <Blo1> 
+
+<Blo1>::== id = num <b1>
+<b1>::== E(null)
+<b1>::== , <Blo1>
+
+<Bloques1>::= const <Blo1> ;
+<Bloques1>::= E(null)
+
+
+<Blo2>::== id  
+<Blo2>::== id , <Blo2>
+
+<Blo2>::== id <b2> 
+<b2>::== E(null)
+<b2>::== , <Blo1>
+
+<Bloques2>::= var <Blo2> ;
+<Bloques2>::= E(null)
+
+<Bloques3>:: = proced id ; bloque; <Bloques3>
+<Bloques3>:: = E (null)
+
+<bv>::= <Bloques1> <Bloques2> <Bloques3> 
+
+<Bloque>::= <bv> <Proposición>
+
+
+<Con1>::= ==
+<Con1>::= !=
+<Con1>::= <
+<Con1>::= <
+<Con1>::= <=
+<Con1>::= >=
+
+<cos>::= <Expre> <Con1> <Expre>
+
+<Condicion> ::= <cos>
+
+
+<pro>::= proposicion
+<pro>::= proposicion ; <pro>
+
+<pro>::= proposicion <p1>
+<p1>::== E(null)
+<p1>::== ; <pro>
+
+<Pros1>::= <begin> <pro> end 
+
+
+<Pros2>::= id = <expre>
+
+
+<pro3>::= id
+<pro3>::=  num
+
+
+<Pros3>::= write <pro3> 
+
+<Pros4>::= read id 
+
+<Pros5>::= call id 
+
+<Pros6>::= if <condicion> then <proposicion>
+
+<Pros7>::= while <condicion> do <proposicion>
+
+<Pro2>::= to 
+<Pro2>::=  dto
+
+
+<Pros8>::= for id = <expre> <Pro2> <expre>  do <proposicion> 
+
+<expre>::= termino 
+<expre>::=  termino <ex>  <expre>
+
+
+<ex>::= +
+<ex>::= -
+
+<expre>::= termino <p2>
+<p2>::== E(null)
+<p2>::== <ex>  <expre>
+
+<Termino>::= factor 
+<Termino>::=  factor <tr>  <Termino>
+<Tr>::= *
+<Tr>::= / 
+
+<Termino>::= factor
+<p3>::== E(null)
+<p3>::==  <tr>  <Termino>
+
+
+<factor>::= ( <expre> ) 
+<factor>::= id 
+<factor>::=  num 
+
+ 
+
+<Proposicion>::= <Pros1> 
+<Proposicion>::= <Pros2> 
+<Proposicion>::= <Pros3>
+<Proposicion>::= <Pros4>
+<Proposicion>::= <Pros5>
+<Proposicion>::= <Pros6>
+<Proposicion>::= <Pros7>
+<Proposicion>::= <Pros8>
+
+
+<prosi1>::= <Pros1><Pros2><Pros3><Pros4><Pros5><Pros6><Pros7><Pros8>
+
+<Proposicion>::= <prosi1> 

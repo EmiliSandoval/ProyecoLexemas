@@ -1,0 +1,136 @@
+frist de Bloques {const,var,proced,begin,id,write,read,call,if,while,for}
+<Pograma>::=<Bloque>.
+
+<Blo1>::== id = num
+<Blo1>::==  id = num , <Blo1> 
+
+frist de Blo1 {id} 
+<Blo1>::== id = num <b1>
+
+frist de b1 {E(null), ","} 
+<b1>::== E(null)
+<b1>::== , <Blo1>
+
+frist de Bloques1 {const, E(null)} 
+<Bloques1>::= const <Blo1> ;
+<Bloques1>::= E(null)
+
+
+<Blo2>::== id  
+<Blo2>::== id , <Blo2>
+
+frist de Blo2 {id} 
+<Blo2>::== id <b2>
+ 
+frist de b2 {E(null), ","} 
+<b2>::== E(null)
+<b2>::== , <Blo1>
+
+frist de Bloques2 {var, E(null)}
+<Bloques2>::= var <Blo2> ;
+<Bloques2>::= E(null)
+
+frist de Bloques3 {proced, E(null)}
+<Bloques3>:: = proced id ; bloque; <Bloques3>
+<Bloques3>:: = E (null)
+
+frist de Bloque bv {const,var, proced}
+<bv>::= <Bloques1> <Bloques2> <Bloques3> 
+
+
+frist de Bloques {const,var,proced,begin,id,write,read,call,if,while,for}
+<Bloque>::= <bv> <Proposición>
+
+
+frist de Con1 {==, !=, <, >, <=, >=}
+<Con1>::= ==
+<Con1>::= !=
+<Con1>::= <
+<Con1>::= <
+<Con1>::= <=
+<Con1>::= >=
+
+
+frist de cos {(,id,num}
+<cos>::= <Expre> <Con1> <Expre>
+
+<Condicion> ::= <cos>
+
+frist de pro {begin,id,write,read,call,if,while,for}
+<pro>::= proposicion <p1>
+
+frist de p1 {E(Null),";"}
+<p1>::== E(null)
+<p1>::== ; <pro>
+
+
+frist de <Pros1> {begin}
+<Pros1>::= begin <pro> end 
+
+frist de <Pros2> {id}
+<Pros2>::= id = <expre>
+
+
+frist de <Pro3> {id,num}
+<pro3>::= id
+<pro3>::=  num
+
+frist de <Pros3> {write}
+<Pros3>::= write <pro3> 
+
+frist de <Pros4> {read}
+<Pros4>::= read id 
+
+frist de <Pros5> {call}
+<Pros5>::= call id 
+
+frist de <Pros6> {if}
+<Pros6>::= if <condicion> then <proposicion>
+
+frist de <Pros7> {while}
+<Pros7>::= while <condicion> do <proposicion>
+
+
+frist de <Pro2> {to,dto}
+<Pro2>::= to 
+<Pro2>::=  dto
+
+frist de <Pros8> {for}
+<Pros8>::= for id = <expre> <Pro2> <expre>  do <proposicion> 
+
+frist de expre {(,id,num }
+<expre>::= termino 
+<expre>::=  termino <ex>  <expre>
+
+frist de ex {+,-}
+<ex>::= +
+<ex>::= -
+
+
+frist de Termino {(,id,num}
+<Termino>::= factor 
+<Termino>::=  factor <tr>  <Termino>
+
+frist de Tr {*,/}
+<Tr>::= *
+<Tr>::= / 
+
+frist de factor {(,id,num}
+<factor>::= ( <expre> ) 
+<factor>::= id 
+<factor>::=  num 
+
+
+
+<Proposicion>::= <Pros1> 
+<Proposicion>::= <Pros2> 
+<Proposicion>::= <Pros3>
+<Proposicion>::= <Pros4>
+<Proposicion>::= <Pros5>
+<Proposicion>::= <Pros6>
+<Proposicion>::= <Pros7>
+<Proposicion>::= <Pros8>
+
+frist de Proposicion {begin,id,write,read,call,if,while,for}
+
+
