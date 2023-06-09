@@ -133,8 +133,8 @@ public class Buscar extends javax.swing.JFrame {
     
 public void Analizar(){
     
-    Arreglo = jTextArea1.getText().split("[^a-zA-Z0-9\\.\\=\\,\\;\\!=\\;=\\<\\>\\==\\<=\\>=\\+\\-\\*\\/\\(\\)']+");
-    
+    Arreglo = jTextArea1.getText().split("(?<=\\W)|(?=\\W)"); //Expresion regular CHECKKKKK!!!!!!!!!!!!!
+    //[^a-zA-Z0-9\\.\\=\\,\\;\\!=\\;=\\<\\>\\==\\<=\\>=\\+\\-\\*\\/\\(\\)']+
                 HashMap<String, Integer> palabras = new HashMap< String,Integer>();
          
 
@@ -174,9 +174,28 @@ public void Analizar(){
        for (int i = 0; i < Arreglo.length; i++) {
                    if(palabras.containsKey(Arreglo[i])){               
                         jTextArea2.append(Arreglo[i]+"    Num en lista:    "+palabras.get(Arreglo[i])+"\n");
-                    }
+                String numero = Removew (Arreglo[i]);
+                    if (!numero.isEmpty()) {
+                        jTextArea2.append("Numero: " + " Se encuentra en la posicion " + (i + 1) + "\n");
+                    }               
+                } else if (!Arreglo[i].trim().isEmpty()) {
+                        jTextArea3.append("ERROR: " +  Arreglo[i] + "Se encuentra en la posicion " + (i + 1) + "\n");
+                }
                 }
 }      //
+
+        boolean NumberTrue (String palabra) {
+            try{
+        Double.parseDouble(palabra);
+        return true;
+       } catch (NumberFormatException e) {
+        return false;
+    }
+}
+
+        String Removew (String palabra) {
+            return palabra.replaceAll("[^0-9.]", "");
+        }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JMenu jMenu1;
